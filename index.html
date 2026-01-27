@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVS King - Passenger & Cargo Three Wheelers</title>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.tvsmotor.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://img.youtube.com">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v40/memqvH322WB32RWSyXjvRpwvBY89tn2O.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Threewheeler-Hero-Banner/TVS-KING-RANGE-Banner-web.webp" as="image" fetchpriority="high">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Non-blocking Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
+    <style>
+        :root {
+            --primary-red: #d52b1e;
+            --secondary-blue: #183883;
+            --accent-green: #00A550;
+            --bg-light: #F9F9FB;
+            --text-dark: #333333;
+            --white: #ffffff;
+            --grey-border: #e6e6e6;
+            --transition-speed: 0.3s;
+            --header-height: 56px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .global-header { height: var(--header-height); background: var(--white); display: flex; align-items: center; justify-content: space-between; padding: 0 4%; position: relative; z-index: 1000; border-bottom: 1px solid var(--grey-border); }
+        .header-left { display: flex; align-items: center; gap: 50px; }
+        .logo-container img { height: 32px; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links li a { font-weight: 500; font-size: 15px; color: #333; display: flex; align-items: center; gap: 6px; transition: color var(--transition-speed); }
+        .hero-section { position: relative; width: 100%; overflow: hidden; height: auto; min-height: 500px; aspect-ratio: 1920 / 800; background: #eee; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    </style>
+    
+    <!-- Load Full CSS Asynchronously -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="global-header">
+        <div class="header-left">
+            <div class="logo-container">
+                <a href="#">
+                    <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/Header/TVSLogo-hr.svg" alt="TVS Motor Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" id="navProducts">Products <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#">Services <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Company <i class="fas fa-chevron-down"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <div class="secondary-links">
+                <a href="#">Buy Vehicle</a>
+                <span class="divider">|</span>
+                <a href="#">Test Ride</a>
+                <span class="divider">|</span>
+                <a href="#">Dealers</a>
+            </div>
+            <div class="utility-icons">
+                <div class="country-selector">
+                    <img src="https://flagcdn.com/w20/in.png" alt="India Flag">
+                    <span>India</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <a href="#" class="icon-link" title="Customer Support"><i class="fas fa-headset"></i></a>
+                <a href="#" class="icon-link" title="Login"><i class="far fa-user"></i></a>
+            </div>
+        </div>
+        
+        <!-- Mega Menu (Restricted to Auto & Cargo) -->
+        <div class="mega-menu" id="megaMenu">
+            <div class="mm-sidebar">
+                <ul>
+                    <li class="mm-tab active" data-target="three-wheelers">Three Wheelers <span class="arrow">></span></li>
+                </ul>
+                <div class="explore-all">
+                    <a href="#products">View Range</a>
+                </div>
+            </div>
+            <div class="mm-content">
+                <!-- Three Wheelers Panel -->
+                <div class="mm-panel active" id="three-wheelers">
+                    <div class="mm-header">
+                        <span>Passenger & Cargo Range</span>
+                    </div>
+                    <div class="mm-grid">
+                        <!-- Passenger -->
+                        <div class="mm-item">
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/ev-max-our-product-images/ev-passenger-auto-img-updated.webp" alt="TVS King EV Max" loading="lazy" decoding="async">
+                            <p>TVS King EV Max</p>
+                        </div>
+                        <div class="mm-item">
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Home-Our-Product/king-deluxe-web.webp" alt="TVS King Deluxe" loading="lazy" decoding="async">
+                            <p>TVS King Deluxe</p>
+                        </div>
+                        <div class="mm-item">
+                            <img src="images/duramax-plus.webp" alt="TVS King Duramax Plus" loading="lazy" decoding="async">
+                            <p>TVS King Duramax Plus</p>
+                        </div>
+                        <!-- Cargo -->
+                        <div class="mm-item">
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Home-Our-Product/kargo-home-page-img-web-updated.webp" alt="TVS King Kargo" loading="lazy" decoding="async">
+                            <p>TVS King Kargo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <picture>
+            <source media="(max-width: 768px)" srcset="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Threewheeler-Hero-Banner/TVS-KING-RANGE-Banner-mob.webp">
+            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Threewheeler-Hero-Banner/TVS-KING-RANGE-Banner-web.webp" alt="TVS King Range" class="hero-img" fetchpriority="high">
+        </picture>
+    </section>
+
+    <!-- Sub-navigation Header -->
+    <header class="sub-header" id="subHeader">
+        <div class="container sub-header-container">
+            <div class="sub-brand">
+                <a href="#">
+                    <img src="images/tvs-king-logo.png" alt="TVS King Logo">
+                </a>
+            </div>
+            <nav class="sub-nav">
+                <ul class="sub-nav-links">
+                    <li class="sub-dropdown">
+                        <a href="#products" class="sub-nav-link">OUR PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                        <div class="sub-dropdown-menu">
+                            <div class="sub-dropdown-item" data-main="passenger">
+                                <span>PASSENGER (AUTO)</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <div class="sub-dropdown-item" data-main="cargo">
+                                <span>CARGO</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#locator" class="sub-nav-link">DEALER LOCATOR</a></li>
+                    <li><a href="#" class="sub-nav-link">FAQ</a></li>
+                    <li><a href="#reviews" class="sub-nav-link">REVIEWS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Global Presence Section -->
+    <section class="section section-global">
+        <div class="container text-center">
+            <h2 class="global-title">More than One Million <br> Happy Customers Across the Globe</h2>
+            
+            <div class="global-content">
+                <p>TVS Motor Company, the flagship company of TVS Group, is one of the largest three-wheeler manufacturers in India with an annual production capacity of more than 2,40,000 three-wheelers.</p>
+                <p>The company is also one of the leading three-wheeler exporters from India distributing to over 43 countries.</p>
+                <p>The journey of TVS King started with a small step 14 years ago and has now become a legacy with over 1 million happy customers across the globe.</p>
+            </div>
+
+            <!-- Interactive Globe Wrapper -->
+            <div class="glob-wrapper">
+                <div class="glob-main">
+                    <div class="glow"></div>
+                    <div id="Earth-element-3w" class="earth-js earth-container">
+                        <!-- Globe will be rendered here via script -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="global-stats">
+                <div class="stat-item">
+                    <div class="stat-number">1000000</div>
+                    <div class="stat-label">Customer Worldwide</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">43+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000k</div>
+                    <div class="stat-label">Vehicles Manufactured Every Year</div>
+                </div>
+            </div>
+
+            <!-- Bottom Action Bar -->
+            <div class="global-action-bar">
+                <a href="#" class="action-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Buy Vehicle</span>
+                </a>
+                <a href="#" class="action-item">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Test Ride</span>
+                </a>
+                <a href="#" class="action-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Dealers</span>
+                </a>
+                <a href="#" class="action-item">
+                    <i class="fas fa-store"></i>
+                    <span>Shop</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Explorer Section -->
+    <section class="section section-products" id="products">
+        <div class="container">
+            <div class="products-header">
+                <div class="products-title-wrapper">
+                    <span>Our</span>
+                    <h2>Products</h2>
+                </div>
+                <div class="products-filters">
+                    <div class="filter-group">
+                        <label>By vehicle type</label>
+                        <div class="type-buttons">
+                            <button class="tab-main active" data-main="passenger">Passenger</button>
+                            <button class="tab-main" data-main="cargo">Cargo</button>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>By vehicle mode</label>
+                        <div class="mode-dropdown">
+                            <select>
+                                <option>All</option>
+                                <option>Petrol</option>
+                                <option>CNG</option>
+                                <option>Electric</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Passenger Content -->
+            <div class="main-tab-content active" id="passenger">
+                <div class="product-sub-tabs">
+                    <button class="tab-sub active" data-sub="ev-max">TVS King EV MAX</button>
+                    <button class="tab-sub" data-sub="deluxe">TVS King Deluxe</button>
+                    <button class="tab-sub" data-sub="duramax">TVS King Duramax Plus</button>
+                </div>
+
+                <!-- EV MAX -->
+                <div class="tab-content active" id="ev-max">
+                    <div class="product-display">
+                        <div class="product-features-col">
+                            <div class="feature-row">
+                                <i class="fas fa-location-arrow"></i>
+                                <span>Certified range of 179* km</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fab fa-bluetooth"></i>
+                                <span>India's First Bluetooth connected three-wheeler with TVS SmartXonnect</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Modern LED Headlamps</span>
+                            </div>
+                        </div>
+                        <div class="product-image-col">
+                            <div class="city-bg"></div>
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/ev-max-our-product-images/ev-passenger-auto-img-updated.webp" alt="TVS King EV MAX" class="product-main-img" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deluxe -->
+                <div class="tab-content" id="deluxe">
+                    <div class="product-display">
+                        <div class="product-features-col">
+                            <div class="feature-row">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Superior fuel efficiency 200cc engine</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-couch"></i>
+                                <span>Comfortable Dual Tone driver & passenger seats</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Powerful twin headlamps</span>
+                            </div>
+                        </div>
+                        <div class="product-image-col">
+                            <div class="city-bg"></div>
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Home-Our-Product/king-deluxe-web.webp" alt="TVS King Deluxe" class="product-main-img" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duramax -->
+                <div class="tab-content" id="duramax">
+                    <div class="product-display">
+                        <div class="product-features-col">
+                            <div class="feature-row">
+                                <i class="fas fa-bolt"></i>
+                                <span>Powerful 225cc Liquid Cooled Engine</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-tools"></i>
+                                <span>Lower maintenance with 10k periodic service</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Best in class power and pick-up</span>
+                            </div>
+                        </div>
+                        <div class="product-image-col">
+                            <div class="city-bg"></div>
+                            <img src="images/duramax-plus.webp" alt="TVS King Duramax Plus" class="product-main-img" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cargo Content -->
+            <div class="main-tab-content" id="cargo">
+                <div class="product-sub-tabs">
+                    <button class="tab-sub active" data-sub="kargo">TVS King Kargo</button>
+                    <button class="tab-sub" data-sub="kargo-ev">TVS King Kargo EV</button>
+                </div>
+
+                 <!-- Kargo -->
+                 <div class="tab-content active" id="kargo">
+                    <div class="product-display">
+                        <div class="product-features-col">
+                            <div class="feature-row">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>High payload for heavy goods</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-truck-loading"></i>
+                                <span>Extra large loading deck</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-wrench"></i>
+                                <span>Built with robust chassis for durability</span>
+                            </div>
+                        </div>
+                        <div class="product-image-col">
+                            <div class="city-bg"></div>
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Home-Our-Product/kargo-home-page-img-web-updated.webp" alt="TVS King Kargo" class="product-main-img" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kargo EV -->
+                <div class="tab-content" id="kargo-ev">
+                    <div class="product-display">
+                        <div class="product-features-col">
+                            <div class="feature-row">
+                                <i class="fas fa-leaf"></i>
+                                <span>Eco-friendly Zero Emission mobility</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Incredibly low running cost</span>
+                            </div>
+                            <div class="feature-row">
+                                <i class="fas fa-plug"></i>
+                                <span>Quick charge technology</span>
+                            </div>
+                        </div>
+                        <div class="product-image-col">
+                            <div class="city-bg"></div>
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Home-Our-Product/kargo-home-page-img-web-updated.webp" alt="TVS King Kargo EV" class="product-main-img" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Carousel Section -->
+    <section class="section section-features-carousel" id="features">
+        <div class="container">
+            <h2 class="features-header-title">Features</h2>
+            
+            <div class="features-carousel-container">
+                <button class="carousel-btn prev-btn" id="featuresPrev"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="features-slider" id="featuresSlider">
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <p class="feature-text-new">BEST-IN-CLASS <br> PICKUP OF <br> 0-30 KM/H IN <br> 3.7 SECONDS</p>
+                    </div>
+
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <p class="feature-text-new">BEST-IN-CLASS <br> WATER WADING <br> CAPACITY OF <br> 500 MM</p>
+                    </div>
+
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <p class="feature-text-new">RANGE OF <br> 179 KM</p>
+                    </div>
+
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <p class="feature-text-new">SUPERIOR <br> GRADEABILITY <br> OF 19%</p>
+                    </div>
+
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <p class="feature-text-new">POWERFUL <br> 225 CC <br> ENGINE</p>
+                    </div>
+
+                    <!-- New Feature Cards -->
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-battery-three-quarters"></i>
+                        </div>
+                        <div class="feature-label-small">CHARGING TIME</div>
+                        <div class="feature-sub-stats">
+                            <div>0-80% in <br> 2hr 15mins</div>
+                            <div class="stat-divider"></div>
+                            <div>0-100% in <br> 3hr 30 mins</div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-angle-double-up"></i>
+                        </div>
+                        <p class="feature-text-new">IMPRESSIVE <br> 31% GRADEABILITY</p>
+                    </div>
+
+                    <div class="feature-card-new">
+                        <div class="feature-icon-new">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-label-small">WARRANTY</div>
+                        <p class="feature-text-new">6 years/ <br> 1,50,000 km</p>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" id="featuresNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#" class="btn-know-more">Know More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Finance Section Redesign -->
+    <section class="section section-finance-new">
+        <div class="container finance-flex">
+            <div class="finance-visuals">
+                <div class="finance-city-watermark"></div>
+                <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Finance-Company/TVS-3Wgif_V1.gif?la=en&h=977&w=746&hash=2930C48FC616D07CAB413FB0549096A3" alt="TVS King Finance" class="finance-main-img" loading="lazy" decoding="async">
+            </div>
+            <div class="finance-texts">
+                <div class="finance-header">
+                    <span class="red-bar"></span>
+                    <div>
+                        <span class="finance-sub">Looking for Finance</span>
+                        <h2 class="finance-main-title">We are here to help you</h2>
+                    </div>
+                </div>
+                <ul class="finance-list">
+                    <li>
+                        <span class="list-num">1</span>
+                        <p>Attractive Finance through Nationalised Banks & Leading NBFCs.</p>
+                    </li>
+                    <li>
+                        <span class="list-num">2</span>
+                        <p>Avail Minimal Documentation.</p>
+                    </li>
+                    <li>
+                        <span class="list-num">3</span>
+                        <p>Enjoy Flexible Repayment Options.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="finance-partners-card">
+                <div class="recommended-partner">
+                    <span class="recommend-badge">Recommended</span>
+                    <h3>Our Trusted Finance Partner</h3>
+                    <div class="partner-logo-main">
+                        <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Finance-Company/TVS-Credit-Logo-rec.svg?la=en&hash=D0E9B05DD4C57C97EC859552084A5E12" alt="TVS Credit" loading="lazy">
+                    </div>
+                    <a href="#" class="btn-outline-blue">Know More</a>
+                </div>
+                <div class="preferred-partners">
+                    <h3>Preferred Finance Partners</h3>
+                    <div class="partners-grid-simple">
+                        <div class="partner-logo-box">
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Finance-Company/sbi-logo.png" alt="SBI" loading="lazy">
+                        </div>
+                        <div class="partner-logo-box">
+                            <img src="https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/Finance-Company/ujjivan-logo.png" alt="Ujjivan Small Finance Bank" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="partner-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot active"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dealer-contact-footer">
+                <p>To Know More, Contact Our Dealers</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Reviews Section Redesign -->
+    <section class="section section-reviews-new" id="reviews">
+        <div class="container">
+            <div class="reviews-header-main">
+                <span class="red-bar-large"></span>
+                <div class="reviews-title-group">
+                    <span class="rev-sub">TVS King Reviews</span>
+                    <h2 class="rev-main-title">Listen to what our customers say</h2>
+                </div>
+            </div>
+
+            <div class="reviews-tab-nav">
+                <button class="rev-tab active" data-tab="videos">Videos</button>
+                <button class="rev-tab" data-tab="blogs">Blogs</button>
+            </div>
+
+            <div class="reviews-display-area">
+                <!-- Videos Panel -->
+                <div class="rev-panel active" id="revVideos">
+                    <div class="rev-slider-wrapper">
+                        <button class="rev-slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="rev-slider" id="videoSlider">
+                            <div class="rev-video-card">
+                                <div class="video-thumb">
+                                    <img src="https://img.youtube.com/vi/ukFt5mO0hSM/hqdefault.jpg" alt="Video Review 1" loading="lazy" decoding="async">
+                                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                                </div>
+                            </div>
+                            <div class="rev-video-card">
+                                <div class="video-thumb">
+                                    <img src="https://img.youtube.com/vi/BDVDJAJ3HAk/hqdefault.jpg" alt="Video Review 2" loading="lazy" decoding="async">
+                                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                                </div>
+                            </div>
+                            <div class="rev-video-card">
+                                <div class="video-thumb">
+                                    <img src="https://img.youtube.com/vi/lhHeK33TnHw/hqdefault.jpg" alt="Video Review 3" loading="lazy" decoding="async">
+                                    <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="rev-slider-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Blogs Panel -->
+                <div class="rev-panel" id="revBlogs">
+                    <div class="blogs-grid">
+                        <p class="text-center" style="width: 100%; color: #666; font-style: italic;">Latest customer stories and blogs coming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section" style="background: #0d1521; color: rgba(255,255,255,0.7); padding: 40px 4%;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
+                
+                <div style="flex: 1; min-width: 200px;">
+                    <h5 style="color: #fff; margin-bottom: 20px; font-weight: 700;">THREE WHEELERS</h5>
+                    <ul style="font-size: 14px; line-height: 2;">
+                        <li><a href="#passenger">Passenger Range</a></li>
+                        <li><a href="#cargo">Cargo Range</a></li>
+                        <li><a href="#">TVS King EV Max</a></li>
+                        <li><a href="#">TVS King Kargo</a></li>
+                    </ul>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px;">
+                     <h5 style="color: #fff; margin-bottom: 20px; font-weight: 700;">BUYER GUIDE</h5>
+                    <ul style="font-size: 14px; line-height: 2;">
+                        <li><a href="#">Dealers</a></li>
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">Service</a></li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 200px;">
+                    <h5 style="color: #fff; margin-bottom: 20px; font-weight: 700;">COMPANY</h5>
+                    <ul style="font-size: 14px; line-height: 2;">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Media</a></li>
+                    </ul>
+                </div>
+
+                <div style="flex: 1; min-width: 200px;">
+                    <h5 style="color: #fff; margin-bottom: 20px; font-weight: 700;">CONTACT</h5>
+                    <ul style="font-size: 14px; line-height: 2;">
+                        <li>Call: 1800 258 7555</li>
+                        <li>Email: customercare@tvsmotor.com</li>
+                    </ul>
+                    <div style="margin-top: 20px; display: flex; gap: 15px;">
+                        <a href="https://www.facebook.com/TVSMotorCompany" target="_blank" class="social-icon" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/tvsmotorcompany" target="_blank" class="social-icon" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tvsmotorcompany" target="_blank" class="social-icon" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/user/TVSMotorCompany" target="_blank" class="social-icon" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <p>&copy; 2026 TVS Motor Company. All Rights Reserved.</p>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Enquiry Button -->
+    <a href="#" style="position: fixed; right: 0; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: right bottom; background: var(--primary-red); color: #fff; padding: 12px 25px; font-weight: 800; border-radius: 8px 8px 0 0; z-index: 1001; font-size: 14px; letter-spacing: 1px; box-shadow: -2px 0 10px rgba(0,0,0,0.2);">ENQUIRY</a>
+
+    <!-- External Scripts - Deferred for better performance -->
+    <script src="//unpkg.com/three" defer></script>
+    <script src="//unpkg.com/globe.gl" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
+    
