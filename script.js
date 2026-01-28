@@ -26,6 +26,9 @@ function initTabs() {
                 }
             });
 
+            // Update Features Slider Content
+            renderFeatures(target);
+
             if (modeSelectElement) {
                 modeSelectElement.dispatchEvent(new Event('change'));
             }
@@ -54,12 +57,14 @@ function initTabs() {
 
     if (modeSelectElement) {
         modeSelectElement.addEventListener('change', (e) => {
-            const selectedMode = e.target.value.toLowerCase();
+            const selectedMode = e.target.value; // Will be 'all', 'electric', or 'ice'
             const activeMainContent = document.querySelector('.main-tab-content.active');
+            console.log('Mode changed to:', selectedMode);
 
             if (activeMainContent) {
                 const tabs = activeMainContent.querySelectorAll('.tab-sub');
                 let firstVisibleTab = null;
+                let activeTabStillVisible = false;
 
                 tabs.forEach(tab => {
                     const modelId = tab.getAttribute('data-sub');
@@ -68,22 +73,32 @@ function initTabs() {
                     if (selectedMode === 'all') {
                         isMatch = true;
                     } else if (selectedMode === 'electric') {
-                        isMatch = modelId.includes('ev');
-                    } else if (selectedMode === 'petrol' || selectedMode === 'cng') {
-                        isMatch = !modelId.includes('ev');
+                        isMatch = modelId.toLowerCase().includes('ev');
+                    } else if (selectedMode === 'ice') {
+                        isMatch = !modelId.toLowerCase().includes('ev');
                     }
 
                     if (isMatch) {
-                        tab.style.display = 'block';
+                        tab.style.display = 'inline-block'; // Use inline-block for flex layout if needed, or just block
                         if (!firstVisibleTab) firstVisibleTab = tab;
-                        if (tab.classList.contains('active')) firstVisibleTab = tab;
+                        if (tab.classList.contains('active')) {
+                            activeTabStillVisible = true;
+                        }
                     } else {
                         tab.style.display = 'none';
+                        if (tab.classList.contains('active')) {
+                            tab.classList.remove('active');
+                        }
                     }
                 });
 
-                if (firstVisibleTab && (!firstVisibleTab.classList.contains('active') || firstVisibleTab.style.display === 'none')) {
+                // If currently active tab is now hidden, click the first available one
+                if (!activeTabStillVisible && firstVisibleTab) {
                     firstVisibleTab.click();
+                } else if (!activeTabStillVisible && !firstVisibleTab) {
+                    // No products match this category in this section
+                    activeMainContent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    console.log('No matching products found for this mode in the current section.');
                 }
             }
         });
@@ -148,77 +163,86 @@ function initSmoothScroll() {
     });
 }
 
-// Globe Initialization with Intersection Observer for Performance
-function initGlobe() {
-    const globeElement = document.getElementById('Earth-element-3w');
-    if (!globeElement) return;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                loadGlobe(globeElement);
-                observer.unobserve(globeElement);
-            }
-        });
-    }, { rootMargin: '100px' });
 
-    observer.observe(globeElement);
+// Features Slider Logic - Dynamic Content
+const featuresData = {
+    passenger: [
+        {
+            title: "BEST-IN-CLASS <br> PICKUP OF <br> 0-30 KM/H IN <br> 3.7 SECONDS",
+            icon: "fas fa-tachometer-alt"
+        },
+        {
+            title: "BEST-IN-CLASS <br> WATER WADING <br> CAPACITY OF <br> 500 MM",
+            icon: "fas fa-water"
+        },
+        {
+            title: "RANGE OF <br> 179 KM",
+            icon: "fas fa-map-marked-alt"
+        },
+        {
+            title: "SUPERIOR <br> GRADEABILITY <br> OF 19%",
+            icon: "fas fa-mountain"
+        },
+        {
+            title: "POWERFUL <br> 225 CC <br> ENGINE",
+            icon: "fas fa-cogs"
+        }
+    ],
+    cargo: [
+        {
+            title: "Fully Rolling Windows",
+            img: "https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/TvsFeatureSlider/TVS-KING-KARGO-HD-EV/Rolling-Window.webp?la=en&hash=45CBDD8FE87E924E21B437CBB5EE96B1"
+        },
+        {
+            title: "Best in Class Loadbality <br> with Leaf Spring",
+            img: "https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/TvsFeatureSlider/TVS-KING-KARGO-HD-EV/Heavy-Performance.webp?la=en&hash=2BD0FBA39BBC3B782F8D1CE2B1DD834A"
+        },
+        {
+            title: "Top Speed of 60 km/h",
+            img: "https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/TvsFeatureSlider/TVS-KING-KARGO-HD-EV/Max-Speed.webp?la=en&hash=228368D871505B72AA04C163536AB31C"
+        },
+        {
+            title: "Water Wading Capacity",
+            img: "https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/TvsFeatureSlider/TVS-KING-KARGO-HD-EV/Water-Wading.webp?la=en&hash=1196ABE4D941028987D1EB37E9D25977"
+        },
+        {
+            title: "Fastest Charging",
+            img: "https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/TvsFeatureSlider/TVS-KING-KARGO-HD-EV/Fastest-charging.webp?la=en&hash=2E328687033287B7DC7D60AEF5069AAC"
+        },
+        {
+            title: "Go Far",
+            img: "https://www.tvsmotor.com/three-wheelers/-/media/Feature/tvs-three-wheeler/TvsFeatureSlider/TVS-KING-KARGO-HD-EV/Go-Far.webp?la=en&hash=414D7E549819F15A5CCFCF5CA9B77474"
+        }
+    ]
+};
+
+function renderFeatures(category) {
+    const slider = document.getElementById('featuresSlider');
+    if (!slider) return;
+
+    slider.innerHTML = '';
+    const data = featuresData[category] || featuresData.passenger;
+
+    data.forEach(feature => {
+        const card = document.createElement('div');
+        card.className = 'feature-card-new';
+
+        let visualContent = '';
+        if (feature.img) {
+            visualContent = `<div class="feature-img-box"><img src="${feature.img}" alt="${feature.title.replace('<br>', ' ')}" loading="lazy"></div>`;
+        } else if (feature.icon) {
+            visualContent = `<div class="feature-icon-new"><i class="${feature.icon}"></i></div>`;
+        }
+
+        card.innerHTML = `
+            ${visualContent}
+            <p class="feature-title-new">${feature.title}</p>
+        `;
+        slider.appendChild(card);
+    });
 }
 
-function loadGlobe(globeElement) {
-    if (typeof Globe === 'undefined') {
-        console.warn('Globe library not loaded yet, retrying in 1s...');
-        setTimeout(() => loadGlobe(globeElement), 1000);
-        return;
-    }
-
-    try {
-        const globe = Globe()
-            (globeElement)
-            .backgroundColor('rgba(0,0,0,0)')
-            .showAtmosphere(true)
-            .atmosphereColor('#bbdefb')
-            .atmosphereDaylightAlpha(0.1)
-            .globeColor('rgba(235, 245, 255, 1)')
-            .width(270)
-            .height(270);
-
-        // Optimization: Use a smaller/local dataset if possible, or just handle errors
-        fetch('https://raw.githubusercontent.com/vasturiano/globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
-            .then(res => {
-                if (!res.ok) throw new Error('Network response was not ok');
-                return res.json();
-            })
-            .then(countries => {
-                globe.polygonsData(countries.features);
-            })
-            .catch(err => console.error('Error fetching globe data:', err));
-
-        globe
-            .polygonCapColor(() => 'rgba(25, 40, 65, 0.7)')
-            .polygonStrokeColor(() => 'rgba(255, 255, 255, 0.1)');
-
-        const locationData = [...Array(15).keys()].map(() => ({
-            lat: (Math.random() - 0.5) * 180,
-            lng: (Math.random() - 0.5) * 360,
-            color: '#d52b1e'
-        }));
-
-        globe
-            .pointsData(locationData)
-            .pointColor(d => d.color)
-            .pointAltitude(0.01)
-            .pointRadius(0.8);
-
-        globe.controls().autoRotate = true;
-        globe.controls().autoRotateSpeed = 1.2;
-        globe.controls().enableZoom = false;
-    } catch (e) {
-        console.error('Error initializing globe:', e);
-    }
-}
-
-// Features Slider Logic - Bulletproof Version
 function initFeaturesSlider() {
     const slider = document.getElementById('featuresSlider');
     const prevBtn = document.getElementById('featuresPrev');
@@ -238,27 +262,18 @@ function initFeaturesSlider() {
         });
     };
 
-    // Use multiple event listeners to catch any type of click
-    prevBtn.onclick = (e) => {
+    prevBtn.addEventListener('click', (e) => {
         e.preventDefault();
         handleScroll('prev');
-    };
+    });
 
-    nextBtn.onclick = (e) => {
+    nextBtn.addEventListener('click', (e) => {
         e.preventDefault();
         handleScroll('next');
-    };
+    });
 
-    // Add touch support for buttons
-    prevBtn.ontouchend = (e) => {
-        e.preventDefault();
-        handleScroll('prev');
-    };
-
-    nextBtn.ontouchend = (e) => {
-        e.preventDefault();
-        handleScroll('next');
-    };
+    // Initial render
+    renderFeatures('passenger');
 }
 
 // Reviews Tab Switching Logic
@@ -296,6 +311,83 @@ function initReviewsTabs() {
     }
 }
 
+// Finance Partners Slider Logic
+function initFinanceSlider() {
+    const track = document.getElementById('financeSliderTrack');
+    const dots = document.querySelectorAll('#financeDots .dot');
+
+    if (!track || !dots.length) return;
+
+    let currentIndex = 0;
+    const slideCount = dots.length;
+
+    const goToSlide = (index) => {
+        currentIndex = index;
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    };
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'));
+            goToSlide(index);
+        });
+    });
+
+    // Auto-play
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        goToSlide(currentIndex);
+    }, 5000);
+}
+
+// Video Modal Logic
+function initVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    const closeBtn = document.querySelector('.close-modal');
+    const videoCards = document.querySelectorAll('.rev-video-card');
+
+    if (!modal || !player || !closeBtn) return;
+
+    videoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const videoId = card.getAttribute('data-video-id');
+            if (videoId) {
+                // Use autoplay=1 to play immediately on open
+                player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        });
+    });
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+        player.src = ''; // Stop video
+        document.body.style.overflow = ''; // Restore scrolling
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on click outside
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
+    });
+}
+
 // Global Init - Optimized for reduced Total Blocking Time (TBT)
 document.addEventListener('DOMContentLoaded', () => {
     // Critical initialization
@@ -305,9 +397,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Defer non-critical initializations
     const deferInit = () => {
         initSmoothScroll();
-        initGlobe();
+
         initFeaturesSlider();
         initReviewsTabs();
+        initFinanceSlider();
+        initVideoModal();
 
         // Support for nav bar sub-menu links
         document.querySelectorAll('.sub-dropdown-item').forEach(item => {
