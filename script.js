@@ -388,6 +388,28 @@ function initVideoModal() {
     });
 }
 
+// Newsletter Submission Logic
+function initNewsletter() {
+    const form = document.getElementById('newsletterForm');
+    const message = document.getElementById('newsletterMessage');
+
+    if (form && message) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('newsletterEmail');
+
+            if (emailInput.value) {
+                // In a real app, you would send this to a server
+                console.log('Subscribing email:', emailInput.value);
+
+                // Simulate success
+                form.style.display = 'none';
+                message.style.display = 'block';
+            }
+        });
+    }
+}
+
 // Global Init - Optimized for reduced Total Blocking Time (TBT)
 document.addEventListener('DOMContentLoaded', () => {
     // Critical initialization
@@ -402,6 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initReviewsTabs();
         initFinanceSlider();
         initVideoModal();
+        initNewsletter();
 
         // Support for nav bar sub-menu links
         document.querySelectorAll('.sub-dropdown-item').forEach(item => {

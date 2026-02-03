@@ -69,7 +69,7 @@
         
         <div class="header-right">
             <div class="secondary-links">
-                <a href="https://wa.me/919360951107?text=Hi%20Vijay%20TVS,%20I'm%20interested%20in%20buying%20a%20vehicle." target="_blank">Buy Vehicle</a>
+                <a href="https://wa.me/919360951107?text=Hi%20Vijay%20TVS,%20I'm%20interested%20in%20buying%20a%20vehicle." target="_blank"><i class="fab fa-whatsapp"></i> Buy Vehicle</a>
                 <span class="divider">|</span>
                 <a href="https://www.tvsmotor.com/book-a-ride" target="_blank">Test Ride</a>
             </div>
@@ -78,6 +78,12 @@
                     <img src="https://flagcdn.com/w20/in.png" alt="India Flag">
                     <span>India</span>
                     <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="header-social-group">
+                    <span class="header-social-label">Social Media:</span>
+                    <a href="https://www.facebook.com/TVSMotorCompany" target="_blank" class="icon-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/tvscoimbatore/" target="_blank" class="icon-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@tvscoimbatore" target="_blank" class="icon-link" title="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
                 <a href="#" class="icon-link" title="Customer Support"><i class="fas fa-headset"></i></a>
                 <a href="#" class="icon-link" title="Login"><i class="far fa-user"></i></a>
@@ -156,8 +162,8 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#locator" class="sub-nav-link">DEALER LOCATOR</a></li>
-                    <li><a href="#" class="sub-nav-link">FAQ</a></li>
+
+                    <li><a href="faq.html" class="sub-nav-link">FAQ</a></li>
                     <li><a href="#reviews" class="sub-nav-link">REVIEWS</a></li>
                 </ul>
             </nav>
@@ -201,10 +207,7 @@
                     <i class="fas fa-motorcycle"></i>
                     <span>Test Ride</span>
                 </a>
-                <a href="#" class="action-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Dealers</span>
-                </a>
+
                 <a href="#" class="action-item">
                     <i class="fas fa-store"></i>
                     <span>Shop</span>
@@ -476,10 +479,7 @@
                 </div>
             </div>
             
-            <div class="dealer-contact-footer">
-                <p>To Know More, Contact Our Dealers</p>
-                <i class="fas fa-chevron-down"></i>
-            </div>
+
         </div>
     </section>
 
@@ -507,21 +507,21 @@
                     <div class="rev-slider-wrapper">
                         <button class="rev-slider-btn prev"><i class="fas fa-chevron-left"></i></button>
                         <div class="rev-slider" id="videoSlider">
-                            <div class="rev-video-card" data-video-id="ukFt5mO0hSM">
+                            <div class="rev-video-card" data-video-id="4ZS9EoxDEvo">
                                 <div class="video-thumb">
-                                    <img src="https://img.youtube.com/vi/ukFt5mO0hSM/hqdefault.jpg" alt="Video Review 1" loading="lazy" decoding="async">
+                                    <img src="https://img.youtube.com/vi/4ZS9EoxDEvo/hqdefault.jpg" alt="Video Review 1" loading="lazy" decoding="async">
                                     <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
                                 </div>
                             </div>
-                            <div class="rev-video-card" data-video-id="BDVDJAJ3HAk">
+                            <div class="rev-video-card" data-video-id="6yYj00NaIwc">
                                 <div class="video-thumb">
-                                    <img src="https://img.youtube.com/vi/BDVDJAJ3HAk/hqdefault.jpg" alt="Video Review 2" loading="lazy" decoding="async">
+                                    <img src="https://img.youtube.com/vi/6yYj00NaIwc/hqdefault.jpg" alt="Video Review 2" loading="lazy" decoding="async">
                                     <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
                                 </div>
                             </div>
-                            <div class="rev-video-card" data-video-id="lhHeK33TnHw">
+                            <div class="rev-video-card" data-video-id="NQkIH_C29n4">
                                 <div class="video-thumb">
-                                    <img src="https://img.youtube.com/vi/lhHeK33TnHw/hqdefault.jpg" alt="Video Review 3" loading="lazy" decoding="async">
+                                    <img src="https://img.youtube.com/vi/NQkIH_C29n4/hqdefault.jpg" alt="Video Review 3" loading="lazy" decoding="async">
                                     <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
                                 </div>
                             </div>
@@ -536,6 +536,23 @@
                         <p class="text-center" style="width: 100%; color: #666; font-style: italic;">Latest customer stories and blogs coming soon...</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section section-newsletter">
+        <div class="container newsletter-container">
+            <div class="newsletter-content">
+                <h2>Join our Newsletter</h2>
+                <p>Subscribe to get latest updates, offers and news about TVS King.</p>
+            </div>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email address" required id="newsletterEmail">
+                <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <div id="newsletterMessage" class="newsletter-success" style="display: none;">
+                <i class="fas fa-check-circle"></i> Thank you for subscribing!
             </div>
         </div>
     </section>
@@ -558,7 +575,7 @@
                 <div style="flex: 1; min-width: 200px;">
                      <h5 style="color: #fff; margin-bottom: 20px; font-weight: 700;">BUYER GUIDE</h5>
                     <ul style="font-size: 14px; line-height: 2;">
-                        <li><a href="#locator">Dealers</a></li>
+
                         <li><a href="#finance">Finance</a></li>
                         <li><a href="#">Service</a></li>
                     </ul>
@@ -569,6 +586,7 @@
                     <ul style="font-size: 14px; line-height: 2;">
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="#">Media</a></li>
                     </ul>
                 </div>
@@ -588,19 +606,19 @@
                         <li>Call: 1800 258 7555</li>
                         <li>Email: customercare@tvsmotor.com</li>
                     </ul>
-                    <div style="margin-top: 20px; display: flex; gap: 15px;">
-                        <a href="https://www.facebook.com/TVSMotorCompany" target="_blank" class="social-icon" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://twitter.com/tvsmotorcompany" target="_blank" class="social-icon" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/tvscoimbatore/?hl=en" target="_blank" class="social-icon" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://youtube.com/@tvscoimbatore?si=Ahl3ZmMoios9q6SW" target="_blank" class="social-icon" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                    <div style="margin-top: 25px;">
+                        <p style="color: #ffffff; font-size: 14px; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Links For Social Media</p>
+                        <div style="display: flex; gap: 15px;">
+                            <a href="https://www.facebook.com/TVSMotorCompany" target="_blank" class="social-icon" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/tvscoimbatore/" target="_blank" class="social-icon" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@tvscoimbatore" target="_blank" class="social-icon" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -616,7 +634,13 @@
     </footer>
 
     <!-- Floating Enquiry Button -->
-    <a href="https://wa.me/919360951107?text=Hi%20Vijay%20TVS,%20I'd%20like%20to%20enquire%20about%20a%20three-wheeler." target="_blank" style="position: fixed; right: 0; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: right bottom; background: var(--primary-red); color: #fff; padding: 12px 25px; font-weight: 800; border-radius: 8px 8px 0 0; z-index: 1001; font-size: 14px; letter-spacing: 1px; box-shadow: -2px 0 10px rgba(0,0,0,0.2);">ENQUIRY</a>
+    <a href="https://wa.me/919360951107?text=Hi%20Vijay%20TVS,%20I'd%20like%20to%20enquire%20about%20a%20three-wheeler." target="_blank" class="floating-enquiry">ENQUIRY</a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919360951107?text=Hi%20Vijay%20TVS,%20I'm%20interested%20in%20TVS%20Three%20Wheelers." target="_blank" class="whatsapp-float" title="Connect on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
 
     <!-- External Scripts - Deferred for better performance -->
 
